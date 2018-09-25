@@ -8,6 +8,8 @@ You provide links, DriveDown provide the files!
 With this script, you can download files from Google
 Drive using the CLI.
 You can use as a library, or a command on terminal.
+To download files, you can use Google Drive URL or
+file ID directly.
 See examples below.
 
 Library:
@@ -18,6 +20,12 @@ o.download()
 
 Command:
 python3 ./drivedown.py 'https://drive.google.com/file/d/0B1Dx_Xbue-lud1dyOVYxenltems'
+
+Changelog:
+
+1.0.1 - Minor fix to print filename when used as command
+        Added infomation about file ID
+1.0.0 - First release
 
 Enjoy!
 '''
@@ -30,7 +38,7 @@ import re
 BUFFER_SIZE = 1024 * 8
 
 __author__ = 'Victor Oliveira'
-__version__ = '1.0'
+__version__ = '1.0.1'
 
 class MyHTMLParser(HTMLParser):
     def __init__(self):
@@ -105,4 +113,4 @@ class DriveDown:
 if __name__ == '__main__':
     import sys
     o = DriveDown(sys.argv[1])
-    o.download()
+    print(o.download())
