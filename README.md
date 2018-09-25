@@ -1,5 +1,4 @@
-# DriveDown
-Download files from Google Drive using CLI  
+# DriveDown  
 
 It's a simple Google Drive CLI downloader.  
 
